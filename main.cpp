@@ -11,12 +11,14 @@
 #include "ToolBox.h"
 #include "ClassificationSystem.h"
 #include "Motocycle.h"
+#include "ShockproofFactory.h"
+#include "StainlessFactory.h"
 
 int main() {
-    ClassificationSystem* cS = new ClassificationSystem();
-    cS->createTransport();
-    cS->transportDoAction();
-    TransportCreator* tC = new Motocycle();
-    cS->setTransport(tC);
-    cS->transportDoAction();
+    ShockproofFactory *f1 = new ShockproofFactory();
+    StainlessFactory *f2 = new StainlessFactory();
+    Screw* s1 = f1->createScrew();
+    Hummer* h1 = f2->createHummer();
+    s1->unscrew();
+    h1->hit();
 }
