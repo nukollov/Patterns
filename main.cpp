@@ -14,9 +14,15 @@
 #include "ShockproofFactory.h"
 #include "StainlessFactory.h"
 #include "Automobile.h"
+#include "TrainingSystem.h"
+#include "State.h"
+#include "InitState.h"
+#include "ReadyState.h"
+#include "RunState.h"
 
 int main() {
-    Automobile *a = new Automobile("mazda");
-    Automobile *a2 = a->clone();
-    std::cout << "mark of automobile is - " << a2->getMark() << std::endl;
+    TrainingSystem* trSys = new TrainingSystem();
+    trSys->start();
+    trSys->start();
+    trSys->start();
 }
