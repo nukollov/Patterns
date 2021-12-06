@@ -13,12 +13,10 @@
 #include "Motocycle.h"
 #include "ShockproofFactory.h"
 #include "StainlessFactory.h"
+#include "Automobile.h"
 
 int main() {
-    ClassificationSystem *cS = ClassificationSystem ::getInstance("hello");
-    cS->showContent();
-    cS = ClassificationSystem ::getInstance("hi");
-    cS->showContent();
-    ClassificationSystem *cS1 = ClassificationSystem ::getInstance("holla");
-    cS1->showContent();
+    Automobile *a = new Automobile("mazda");
+    Automobile *a2 = a->clone();
+    std::cout << "mark of automobile is - " << a2->getMark() << std::endl;
 }

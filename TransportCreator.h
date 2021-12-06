@@ -14,6 +14,7 @@ protected:
     std::string deffect;
 public:
     virtual void doAction() {};
+    std::string getMark();
 };
 
 

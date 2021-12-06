@@ -8,7 +8,11 @@
 
 class Automobile : public TransportCreator{
 public:
+    Automobile();
+    Automobile(std::string str);
     void doAction() override;
+    Automobile* clone();
+    Automobile(Automobile *a);
 };
 
 

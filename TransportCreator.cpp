@@ -3,3 +3,4 @@
 //
 
 #include "TransportCreator.h"
+std::string TransportCreator ::getMark() {return this->mark;}
