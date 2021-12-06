@@ -10,13 +10,18 @@
 
 class ClassificationSystem {
 private:
+    static ClassificationSystem* clSys;
+    std::string content;
     TransportCreator* transport;
     DiagnosticStand * diaSt;
+    ClassificationSystem(std::string c);
 public:
     void setDiagnosticStand(DiagnosticStand* dS);
     void createTransport();
     void setTransport(TransportCreator* tC);
     void transportDoAction();
+    static ClassificationSystem* getInstance(std::string c);
+    void showContent();
 };
 
 
