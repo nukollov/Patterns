@@ -19,10 +19,15 @@
 #include "InitState.h"
 #include "ReadyState.h"
 #include "RunState.h"
+#include "Caretaker.h"
 
 int main() {
-    TrainingSystem* trSys = new TrainingSystem();
-    trSys->start();
-    trSys->start();
-    trSys->start();
+    ClassificationSystem* cS = new ClassificationSystem("test1");
+    Caretaker* caretaker = new Caretaker(cS);
+    caretaker->pushMemento();
+    std::cout << "1 call: " << cS->getContent() << std::endl;
+    cS->setContent("test2");
+    std::cout << "2 call: " << cS->getContent() << std::endl;
+    caretaker->popMemento();
+    std::cout << "3 call: " << cS->getContent() << std::endl;
 }

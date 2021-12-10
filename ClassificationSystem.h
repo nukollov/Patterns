@@ -8,13 +8,20 @@
 #include "TransportCreator.h"
 #include "DiagnosticStand.h"
 
+class Memento {
+private:
+    std::string str;
+public:
+    Memento(std::string str);
+    std::string getState();
+};
+
 class ClassificationSystem {
 private:
     static ClassificationSystem* clSys;
     std::string content;
     TransportCreator* transport;
     DiagnosticStand * diaSt;
-    ClassificationSystem(std::string c);
 public:
     void setDiagnosticStand(DiagnosticStand* dS);
     void createTransport();
@@ -22,6 +29,11 @@ public:
     void transportDoAction();
     static ClassificationSystem* getInstance(std::string c);
     void showContent();
+    Memento* save();
+    void restore(Memento* mem);
+    ClassificationSystem(std::string c);
+    void setContent(std::string c);
+    std::string getContent();
 };
 
 

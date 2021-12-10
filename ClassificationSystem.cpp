@@ -24,4 +24,16 @@ ClassificationSystem* ClassificationSystem ::getInstance(std::string c)
     return clSys;
 }
 
+void ClassificationSystem ::setContent(std::string c) { this->content = c;}
+
+std::string ClassificationSystem ::getContent() { return this->content;}
+
+void ClassificationSystem ::restore(Memento *mem) { this->content = mem->getState();}
+
+Memento* ClassificationSystem ::save(){return new Memento(this->content);}
+
 void ClassificationSystem::showContent() {std::cout << content << std::endl;}
+
+std::string Memento ::getState() { return this->str;}
+
+Memento ::Memento(std::string str){this->str = str;}
