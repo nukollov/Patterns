@@ -5,14 +5,16 @@
 #ifndef LR3_AUTOMOBILE_H
 #define LR3_AUTOMOBILE_H
 #include "TransportCreator.h"
+#include "Subcriber.h"
 
-class Automobile : public TransportCreator{
+class Automobile : public TransportCreator, public Subcriber{
 public:
     Automobile();
     Automobile(std::string str);
     void doAction() override;
     Automobile* clone();
     Automobile(Automobile *a);
+    void update() override;
 };
 
 

@@ -20,14 +20,17 @@
 #include "ReadyState.h"
 #include "RunState.h"
 #include "Caretaker.h"
+#include "Receiver.h"
 
 int main() {
     ClassificationSystem* cS = new ClassificationSystem("test1");
-    Caretaker* caretaker = new Caretaker(cS);
-    caretaker->pushMemento();
-    std::cout << "1 call: " << cS->getContent() << std::endl;
-    cS->setContent("test2");
-    std::cout << "2 call: " << cS->getContent() << std::endl;
-    caretaker->popMemento();
-    std::cout << "3 call: " << cS->getContent() << std::endl;
+    Subcriber* s1 = new Automobile();
+    Subcriber* s2 = new Receiver();
+    cS->subcribe(s1);
+    cS->subcribe(s2);
+    std::cout << "1 notify:" << std::endl;
+    cS->notify();
+    cS->unsubscribe();
+    std::cout << "2 notify:" << std::endl;
+    cS->notify();
 }

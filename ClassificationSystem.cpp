@@ -34,6 +34,15 @@ Memento* ClassificationSystem ::save(){return new Memento(this->content);}
 
 void ClassificationSystem::showContent() {std::cout << content << std::endl;}
 
+void ClassificationSystem ::subcribe(Subcriber *sub) {this->subscribers.push_back(sub);}
+
+void ClassificationSystem ::unsubscribe() { this->subscribers.pop_back();}
+
+void  ClassificationSystem ::notify() {
+    for(int i = 0; i < this->subscribers.size(); i ++)
+        subscribers[i]->update();
+}
+
 std::string Memento ::getState() { return this->str;}
 
 Memento ::Memento(std::string str){this->str = str;}

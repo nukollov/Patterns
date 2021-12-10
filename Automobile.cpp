@@ -18,3 +18,5 @@ Automobile :: Automobile(Automobile *a) {this->mark = a->mark;}
 Automobile::Automobile() {}
 
 Automobile :: Automobile(std::string str) {this->mark = str;}
+
+void Automobile ::update() {std::cout << "automobile got notification" << std::endl;}

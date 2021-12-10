@@ -7,6 +7,8 @@
 #include <iostream>
 #include "TransportCreator.h"
 #include "DiagnosticStand.h"
+#include "Subcriber.h"
+#include "vector"
 
 class Memento {
 private:
@@ -22,6 +24,8 @@ private:
     std::string content;
     TransportCreator* transport;
     DiagnosticStand * diaSt;
+    std::vector<Subcriber*> subscribers;
+
 public:
     void setDiagnosticStand(DiagnosticStand* dS);
     void createTransport();
@@ -34,6 +38,9 @@ public:
     ClassificationSystem(std::string c);
     void setContent(std::string c);
     std::string getContent();
+    void subcribe(Subcriber* sub);
+    void unsubscribe();
+    void notify();
 };
 
 
