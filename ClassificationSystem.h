@@ -39,7 +39,7 @@ public:
     void setContent(std::string c);
     std::string getContent();
     void subcribe(Subcriber* sub);
-    void unsubscribe();
+    void unsubscribe(int num);
     void notify();
 };
 

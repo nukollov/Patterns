@@ -30,7 +30,8 @@ int main() {
     cS->subcribe(s2);
     std::cout << "1 notify:" << std::endl;
     cS->notify();
-    cS->unsubscribe();
+    cS->unsubscribe(5);
+    cS->unsubscribe(0);
     std::cout << "2 notify:" << std::endl;
     cS->notify();
 }

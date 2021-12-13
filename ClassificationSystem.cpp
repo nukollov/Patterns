@@ -36,7 +36,12 @@ void ClassificationSystem::showContent() {std::cout << content << std::endl;}
 
 void ClassificationSystem ::subcribe(Subcriber *sub) {this->subscribers.push_back(sub);}
 
-void ClassificationSystem ::unsubscribe() { this->subscribers.pop_back();}
+void ClassificationSystem ::unsubscribe(int num) {
+    if (this->subscribers.size() > num)
+        this->subscribers.erase(this->subscribers.begin() + num);
+    else
+        std::cout << "wrong number!" << std::endl;
+}
 
 void  ClassificationSystem ::notify() {
     for(int i = 0; i < this->subscribers.size(); i ++)
